@@ -1,0 +1,12 @@
+version: '3'
+services:
+    txt-sum:
+        container_name: seek-ai-txt
+        image: seek-ai-txt-sum:1.0.0
+        build:
+            context: ../.
+            dockerfile: ./docker/Dockerfile
+        volumes:
+            - ..:/seek-ai/txt-sum
+        network_mode: "host"
+        restart: always
